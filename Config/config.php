@@ -18,5 +18,19 @@ class Config{
         $res = mysqli_query($this->con_res,$qry); //boolean
         return $res;
     }
+
+    public function fetch() {
+        $this->connect();
+        $qry="SELECT * FROM studs;";
+        $res = mysqli_query($this->con_res,$qry);
+        return $res;
+    }
+
+    public function delete($id) {
+        $this->connect();
+        $qry="DELETE FROM studs WHERE id=$id;";
+        $res = mysqli_query($this->con_res,$qry);
+        return $res;
+    }
 }
 ?>
